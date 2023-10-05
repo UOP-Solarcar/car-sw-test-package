@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = require("express");
-var util = require("util");
-var app = (0, express_1.default)();
+var express = require("express");
+var app = express();
 var clamp = function (num, min, max) { return Math.min(Math.max(num, min), max); };
 var data_pak = {
     data: {
@@ -124,11 +123,6 @@ app.listen(3000, function () {
     setInterval(function () {
         data_pak = GenerateData();
         console.log("Generated Data!");
-        console.log(util.default.inspect(data_pak, {
-            showHidden: false,
-            depth: null,
-            colors: true,
-        }));
     }, 2000);
 });
 /*
